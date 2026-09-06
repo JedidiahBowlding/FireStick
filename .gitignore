@@ -1,0 +1,7 @@
+.gradle/
+**/build/
+local.properties
+node_modules/
+.env
+*.iml
+.DS_Store

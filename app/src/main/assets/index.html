@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="app">
+  <header><div class="brand"><span class="mark">◇</span> OPEN CANVAS <span class="local">● LOCAL</span></div><div id="projectName">Untitled project</div><div class="clock" id="clock"></div></header>
+  <main>
+    <aside id="rail">
+      <button data-action="add" class="active"><b>＋</b><span>Add card</span></button>
+      <button data-action="connect"><b>⌁</b><span>Connect</span></button>
+      <button data-action="templates"><b>▦</b><span>Templates</span></button>
+      <button data-action="browser"><b>◫</b><span>Browser</span></button>
+      <div class="spacer"></div>
+      <button data-action="zoom"><b>⌕</b><span>View</span></button>
+    </aside>
+    <section id="workspace"><svg id="lines"></svg><div id="canvas"></div><div id="empty">
+      <span class="eyebrow">YOUR SPACE IS READY</span><h1>What would you like<br>to build today?</h1>
+      <div class="choices"><button data-template="mindmap"><i>✣</i><strong>Mind map</strong><small>Explore an idea</small></button><button data-template="timeline"><i>↝</i><strong>Timeline</strong><small>Plan the path</small></button><button data-template="flowchart"><i>⌘</i><strong>Flowchart</strong><small>Map a process</small></button></div>
+      <p class="hint"><kbd>◉</kbd> SELECT &nbsp;&nbsp; <kbd>☰</kbd> TOOLS &nbsp;&nbsp; <kbd>🎙</kbd> SAY “START A MIND MAP”</p>
+    </div></section>
+    <section id="browserPane"><div class="browserBar"><button id="closeBrowser">×</button><span>◉</span><input id="browserUrl" value="https://en.wikipedia.org/wiki/Design_thinking"><button id="goBrowser">GO</button></div><iframe id="browserFrame"></iframe></section>
+  </main>
+  <footer><span id="status">Everything stays on this TV</span><div><button id="undo">↶ Undo</button><button id="aiButton">✦ Organize with AI <small>~1 call</small></button></div></footer>
+</div>
+<div id="templateModal" class="modal"><div class="sheet"><span class="eyebrow">START WITH STRUCTURE</span><h2>Choose a template</h2><div class="templateGrid"><button data-template="mindmap">✣ Mind map</button><button data-template="timeline">↝ Timeline</button><button data-template="flowchart">⌘ Flowchart</button><button data-template="blank">□ Blank canvas</button></div><button class="close">Cancel</button></div></div>
+<div id="aiModal" class="modal"><div class="sheet aiSheet"><span class="eyebrow">ONE HIGH-IMPACT ACTION</span><h2>Organize this project?</h2><p>Cards are sent together in a single request. Nothing is sent until you confirm.</p><div class="cost"><span>Estimated input</span><b id="tokenEstimate">~120 tokens</b><span>API calls</span><b>1</b></div><div class="modalActions"><button class="close">Cancel</button><button id="confirmAi">✦ Organize now</button></div></div></div>
+<div id="toast"></div><script src="app.js"></script></body></html>
